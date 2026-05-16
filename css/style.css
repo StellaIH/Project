@@ -1,0 +1,405 @@
+/* ===== IMPORT FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --cream: #f5f0e8;
+  --ink: #1a1208;
+  --rust: #c4541a;
+  --gold: #d4a847;
+  --muted: #7a6e5f;
+  --card-bg: #faf7f2;
+}
+
+/* ===== RESET & BASE ===== */
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  min-height: 100vh;
+  background-color: var(--ink);
+  color: var(--cream);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Decorative ruled lines */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 39px,
+    rgba(245,240,232,0.06) 39px,
+    rgba(245,240,232,0.06) 40px
+  );
+  pointer-events: none;
+}
+
+.header-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.2s;
+}
+
+.header-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.4s;
+}
+
+.header-name em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.header-subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.6s;
+}
+
+.header-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--rust);
+  margin: 1.5rem auto;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.5s;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scroll-cue::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--muted);
+  animation: scrollLine 1.5s ease-in-out infinite;
+}
+
+/* ===== SECTION LABELS ===== */
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+/* ===== PORTFOLIO SECTION ===== */
+.portfolio-section {
+  padding: 6rem 0 5rem;
+}
+
+.portfolio-intro {
+  max-width: 480px;
+  margin-bottom: 4rem;
+}
+
+.portfolio-intro p {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(26,18,8,0.1);
+  border-radius: 0;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(26,18,8,0.12);
+}
+
+.card-img-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 square */
+  overflow: hidden;
+  background: #e8e2d8;
+}
+
+.card-img-wrapper img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-wrapper img {
+  transform: scale(1.04);
+}
+
+/* Illustration fallback tiles */
+.card-illustration {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.card-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--cream);
+  background: var(--ink);
+  padding: 0.2rem 0.5rem;
+  font-family: 'DM Mono', monospace;
+  z-index: 2;
+}
+
+.card-body {
+  padding: 1.5rem;
+  border-top: 2px solid var(--ink);
+}
+
+.card-category {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.card-text {
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.btn-ink:hover {
+  background: var(--rust);
+  color: var(--cream);
+}
+
+.btn-ink .arrow {
+  font-size: 0.8rem;
+  transition: transform 0.25s ease;
+}
+
+.btn-ink:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* ===== ABOUT STRIP ===== */
+.about-strip {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-strip::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 20rem;
+  color: rgba(255,255,255,0.03);
+  position: absolute;
+  top: -3rem;
+  left: -2rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.about-strip .section-label { color: var(--gold); }
+
+.about-strip .section-title { color: var(--cream); }
+
+.about-bio {
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: rgba(245,240,232,0.65);
+  max-width: 520px;
+  margin-top: 1rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(245,240,232,0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skills-list li::before {
+  content: '→';
+  color: var(--rust);
+  font-size: 0.7rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--cream);
+  border-top: 1px solid rgba(26,18,8,0.1);
+  padding: 2.5rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.footer-school {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ILLUSTRATION BACKGROUNDS ===== */
+.illus-recipe   { background: linear-gradient(135deg, #3d1f0a 0%, #7a3a12 50%, #c4541a 100%); }
+.illus-map      { background: linear-gradient(135deg, #0a1f3d 0%, #1a3a6a 50%, #2a5fa8 100%); }
+.illus-webpage  { background: linear-gradient(135deg, #1a1208 0%, #3d3020 50%, #7a6030 100%); }
+.illus-css      { background: linear-gradient(135deg, #1f3d0a 0%, #3a6a1a 50%, #5fa82a 100%); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 576px) {
+  .portfolio-section { padding: 4rem 0 3rem; }
+  .card-body { padding: 1.2rem; }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Custom styles (always AFTER bootstrap so our rules win) -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <title>Stella Liu — Portfolio</title>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="text-center position-relative" style="z-index:1;">
+      <p class="header-eyebrow">UC Berkeley · J220 · 2025</p>
+      <h1 class="header-name">Stella<br><em>Liu</em></h1>
+      <div class="header-divider"></div>
+      <p class="header-subtitle">Econ Freshman at Cal · ironhammer</p>
+    </div>
+    <div class="scroll-cue">scroll</div>
+  </header>
+
+  
+  <section class="portfolio-section">
+    <div class="container">
+
+      <!-- Intro -->
+      <div class="portfolio-intro fade-in-up">
+        <p class="section-label">Selected Work</p>
+        <h2 class="section-title">Projects from<br>J220</h2>
+        <p>I'm a freshman econ major who somehow ended up in a journalism coding class. Honestly? Best decision I've made at Cal so far. These are the things I built along the way.</p>
+      </div>
+
+      
+      <div class="row g-4">
+
+        
+        <div class="col-12 col-sm-6 col-lg-4 fade-in-up" style="transition-delay: 0.1s;">
+          <div class="card">
+            <div class="card-img-wrapper illus-recipe">
+              <span class="card-number">No. 04</span>
+              
+              <div class="card-illustration">🍪</div>
+            </div>
+            <div class="card-body">
+              <p class="card-category">Recipe &amp; HTML</p>
+              <h5 class="card-title">The "Thick &amp; Chunky" Chocolate Chip Cookie</h5>
+              <p class="card-text">My first real HTML project! I wrote up my go-to cookie recipe with dark chocolate chunks, walnuts, the works. Turns out making a webpage about cookies is way more fun than it sounds.</p>
+              <a href="https://stellaih.github.io/04-recipe/" target="_blank" class="btn-ink">
+                View Project <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="col-12 col-sm-6 col-lg-4 fade-in-up" style="transition-delay: 0.2s;">
+          <div class="card">
+            <div class="card-img-wrapper illus-map">
+              <span class="card-number">No. 06</span>
+              
+              <div class="card-illustration">🗺️</div>
+            </div>
+            <div class="card-body">
+              <p class="card-category">Interactive Map</p>
+              <h5 class="card-title">Stella's Travel Bucket List</h5>
+              <p class="card-text">I made an interactive map of places I actually want to travel to someday. You scroll through and the map moves with you! I had no idea you could make something like that with some simple code!</p>
+              <a href="https://stellaih.github.io/06-scrolly-map/" target="_blank" class="btn-ink">
+                View Project <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-12 col-sm-6 col-lg-4 fade-in-up" style="transition-delay: 0.3s;">
+          <div class="card">
+            <div class="card-img-wrapper illus-webpage">
+              <span class="card-number">No. 03</span>
+              <!--
+                TO ADD A SCREENSHOT:
+                1. Take a screenshot of your CSS exercise page
+                2. Crop it to a square
+                3. Save it as assets/css-exercise.jpg
+                4. Replace the card-illustration div below with:
+                   <img src="assets/css-exercise.jpg" class="card-img-top img-fluid" alt="CSS exercise screenshot">
+              -->
+              <div class="card-illustration">💻</div>
+            </div>
+            <div class="card-body">
+              <p class="card-category">CSS Exercise</p>
+              <h5 class="card-title">My First Webpage</h5>
+              <p class="card-text">This was one of my first times ever writing CSS. I was basically just figuring out what everything does by trying things and seeing what broke. Very chaotic, very fun. (I also accidentally submitted the README file to my professor so that was a great start.)</p>
+              <a href="https://stellaih.github.io/03-css-exercise/" target="_blank" class="btn-ink">
+                View Project <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </section>
+
+  
+  <section class="about-strip">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-md-7 fade-in-up">
+          <p class="section-label">About</p>
+          <h2 class="section-title">Hi, I'm Stella<br>(aka ironhammer 🔨)</h2>
+          <p class="about-bio">
+            Freshman at UC Berkeley, probably majoring in econ. Maybe econ + math, maybe econ + cog sci, still figuring it out! I took J220 because it looked interesting and totally outside my comfort zone, and I'm really glad I did. Before this class the most "coding" I'd done was Scratch. Now I know how to make little websites that teach people how to bake cookies and explore the world through maps. I also love anime and digital art. You can find my drawings on my GitHub 🌿
+          </p>
+        </div>
+        <div class="col-12 col-md-4 offset-md-1 fade-in-up" style="transition-delay:0.15s;">
+          <p class="section-label" style="color:rgba(245,240,232,0.4); margin-bottom:1.25rem;">Skills &amp; Tools</p>
+          <ul class="skills-list">
+            <li>HTML (first time this semester!)</li>
+            <li>CSS &amp; Bootstrap</li>
+            <li>Interactive Maps</li>
+            <li>Scrollytelling</li>
+            <li>GitHub Pages</li>
+            <li>Anime &amp; Digital Art 🎨</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Stella Liu</span>
+        <span class="footer-school">UC Berkeley · Econ '28 · J220</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Intersection Observer for fade-in-up elements
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
