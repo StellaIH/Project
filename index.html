@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+  <!-- Bootstrap CSS (required) -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  
+  <!-- Google Fonts — Playfair Display (display serif) + DM Mono (monospace) -->
+  <!-- TIP: For local/self-hosted fonts, download .woff2 files from gwfh.mranftl.com
+       and add @font-face rules in style.css pointing to ../fonts/ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -30,7 +32,7 @@
     <div class="scroll-cue">scroll</div>
   </header>
 
-  
+  <!-- ===== PORTFOLIO SECTION ===== -->
   <section class="portfolio-section">
     <div class="container">
 
@@ -41,15 +43,22 @@
         <p>I'm a freshman econ major who somehow ended up in a journalism coding class. Honestly? Best decision I've made at Cal so far. These are the things I built along the way.</p>
       </div>
 
-      
+      <!-- Cards Grid -->
       <div class="row g-4">
 
-        
+        <!-- Card 1: Recipe -->
         <div class="col-12 col-sm-6 col-lg-4 fade-in-up" style="transition-delay: 0.1s;">
           <div class="card">
             <div class="card-img-wrapper illus-recipe">
               <span class="card-number">No. 04</span>
-              
+              <!--
+                TO ADD A SCREENSHOT:
+                1. Take a screenshot of your recipe page
+                2. Crop it to a square (same size as other images)
+                3. Save it as assets/recipe.jpg
+                4. Replace the card-illustration div below with:
+                   <img src="assets/recipe.jpg" class="card-img-top img-fluid" alt="Recipe project screenshot">
+              -->
               <div class="card-illustration">🍪</div>
             </div>
             <div class="card-body">
@@ -63,12 +72,19 @@
           </div>
         </div>
 
-       
+        <!-- Card 2: Scrolly Map -->
         <div class="col-12 col-sm-6 col-lg-4 fade-in-up" style="transition-delay: 0.2s;">
           <div class="card">
             <div class="card-img-wrapper illus-map">
               <span class="card-number">No. 06</span>
-              
+              <!--
+                TO ADD A SCREENSHOT:
+                1. Take a screenshot of your scrolly map
+                2. Crop it to a square
+                3. Save it as assets/map.jpg
+                4. Replace the card-illustration div below with:
+                   <img src="assets/map.jpg" class="card-img-top img-fluid" alt="Scrolly map project screenshot">
+              -->
               <div class="card-illustration">🗺️</div>
             </div>
             <div class="card-body">
@@ -82,7 +98,7 @@
           </div>
         </div>
 
-        
+        <!-- Card 3: CSS Exercise -->
         <div class="col-12 col-sm-6 col-lg-4 fade-in-up" style="transition-delay: 0.3s;">
           <div class="card">
             <div class="card-img-wrapper illus-webpage">
@@ -112,7 +128,7 @@
     </div><!-- /container -->
   </section>
 
-  
+  <!-- ===== ABOUT STRIP ===== -->
   <section class="about-strip">
     <div class="container">
       <div class="row align-items-center g-5">
@@ -138,7 +154,7 @@
     </div>
   </section>
 
-  
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <div class="footer-inner">
